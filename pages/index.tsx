@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Bot, Zap, Users, CheckCircle, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
 import Head from 'next/head';
 
+// Updated landing page
 const VoltMindLanding = () => {
   const [formData, setFormData] = useState({
     name: '',
