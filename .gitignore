@@ -1,0 +1,29 @@
+﻿# Dependencies
+node_modules/
+.npm
+.yarn
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+dist/
+
+# Environment variables
+.env*
+
+# Logs
+*.log
+
+# Runtime data
+*.pid
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
