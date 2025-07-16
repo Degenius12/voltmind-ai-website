@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Bot, Zap, Users, CheckCircle, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import { ArrowRight, Bot, Users, CheckCircle, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
 import Head from 'next/head';
 import VoltMindLogo from '../components/VoltMindLogo';
 
@@ -348,7 +348,7 @@ const VoltMindLanding = () => {
                 <span className="text-lg font-bold text-white">VoltMind AI</span>
               </div>
               <div className="text-slate-400 text-sm">
-                Ãƒâ€šÃ‚Â© 2025 VoltMind AI. All rights reserved.
+                ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2025 VoltMind AI. All rights reserved.
               </div>
             </div>
           </div>
