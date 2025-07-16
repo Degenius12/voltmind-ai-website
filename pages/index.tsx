@@ -147,7 +147,7 @@ const VoltMindLanding = () => {
 
               <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all group">
                 <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="w-6 h-6 text-white" />
+                  <VoltMindLogo size={24} className="text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Business Automation</h3>
                 <p className="text-slate-300 mb-6">
@@ -225,7 +225,7 @@ const VoltMindLanding = () => {
                 <div className="w-full h-96 bg-gradient-to-br from-teal-500/20 to-yellow-500/20 rounded-2xl flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-24 h-24 bg-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Zap className="w-12 h-12 text-yellow-400" />
+                      <VoltMindLogo size={48} className="text-yellow-400" />
                     </div>
                     <p className="text-slate-300 text-lg font-semibold">AI-Powered Innovation</p>
                   </div>
@@ -343,12 +343,12 @@ const VoltMindLanding = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center space-x-2 mb-4 md:mb-0">
                 <div className="w-6 h-6 bg-teal-600 rounded-lg flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-yellow-400" />
+                  <VoltMindLogo size={24} />
                 </div>
                 <span className="text-lg font-bold text-white">VoltMind AI</span>
               </div>
               <div className="text-slate-400 text-sm">
-                Ã‚Â© 2025 VoltMind AI. All rights reserved.
+                Ãƒâ€šÃ‚Â© 2025 VoltMind AI. All rights reserved.
               </div>
             </div>
           </div>
