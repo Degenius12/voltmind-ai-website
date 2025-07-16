@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Bot, Zap, Users, CheckCircle, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
 import Head from 'next/head';
+import VoltMindLogo from '../components/VoltMindLogo';
 
 // Updated landing page
 const VoltMindLanding = () => {
@@ -37,9 +38,7 @@ const VoltMindLanding = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-yellow-400" />
-                </div>
+                <VoltMindLogo size={32} />
                 <span className="text-2xl font-bold text-white">VoltMind AI</span>
               </div>
               <div className="hidden md:flex items-center space-x-8">
@@ -349,7 +348,7 @@ const VoltMindLanding = () => {
                 <span className="text-lg font-bold text-white">VoltMind AI</span>
               </div>
               <div className="text-slate-400 text-sm">
-                © 2025 VoltMind AI. All rights reserved.
+                Ã‚Â© 2025 VoltMind AI. All rights reserved.
               </div>
             </div>
           </div>
