@@ -3,31 +3,29 @@
 export default function VoltMindLogo({ size = 32, className = '' }) {
   return (
     <div className="relative flex items-center justify-center w-8 h-8">
-      <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
-        {/* Brain-like shape */}
+      <svg width={size} height={size} viewBox="0 0 40 40" fill="none">
+        {/* Hexagonal mind shape */}
         <path 
-          d="M16 4C12 4 9 7 9 11C9 12.5 9.5 13.8 10.2 15C9.2 16 8.7 17.3 8.7 18.7C8.7 22.7 12 26 16 26C20 26 23.3 22.7 23.3 18.7C23.3 17.3 22.8 16 21.8 15C22.5 13.8 23 12.5 23 11C23 7 20 4 16 4Z"
-          stroke="#14b8a6" 
-          strokeWidth="1.5" 
-          fill="#14b8a6" 
-          fillOpacity="0.1"
+          d="M20 4L32 12L32 28L20 36L8 28L8 12L20 4Z" 
+          fill="url(#mindGradient)" 
+          stroke="#0d9488" 
+          strokeWidth="1.5"
         />
         
-        {/* Large prominent lightning bolt */}
-        <path 
-          d="M14 9L18 5L16 5L20 2L12 14L15 14L14 9Z" 
-          fill="#eab308"
-          stroke="#ca8a04"
-          strokeWidth="0.3"
-        />
+        {/* Circuit lines */}
+        <path d="M15 15h10M12 20h16M15 25h10" stroke="#eab308" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="15" cy="15" r="1.5" fill="#eab308"/>
+        <circle cx="25" cy="15" r="1.5" fill="#eab308"/>
+        <circle cx="20" cy="20" r="2" fill="#fbbf24"/>
+        <circle cx="15" cy="25" r="1.5" fill="#eab308"/>
+        <circle cx="25" cy="25" r="1.5" fill="#eab308"/>
         
-        {/* Lightning glow effect */}
-        <path 
-          d="M14 9L18 5L16 5L20 2L12 14L15 14L14 9Z" 
-          fill="#fbbf24"
-          opacity="0.6"
-          transform="scale(1.1) translate(-0.8, -0.8)"
-        />
+        <defs>
+          <linearGradient id="mindGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#14b8a6" />
+            <stop offset="100%" stopColor="#0d9488" />
+          </linearGradient>
+        </defs>
       </svg>
     </div>
   );
