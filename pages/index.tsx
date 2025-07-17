@@ -159,7 +159,7 @@ export default function VoltMindLanding() {
                   </div>
                   <div className="flex items-center text-slate-300">
                     <Phone className="w-5 h-5 text-teal-400 mr-3" />
-                    <span>+1 (your-actual-number)</span>
+                    <span>+1 (615) 549-7229</span>
                   </div>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function VoltMindLanding() {
         <footer className="bg-slate-900/50 border-t border-slate-800 py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <img src="/voltmind-logo.png" alt="VoltMind AI" className="h-8 sm:h-10 w-auto object-contain mx-auto mb-4" />
-            <div className="text-slate-400 text-sm">Â© 2025 VoltMind AI. All rights reserved.</div>
+            <div className="text-slate-400 text-sm">Ã‚Â© 2025 VoltMind AI. All rights reserved.</div>
           </div>
         </footer>
       </div>
