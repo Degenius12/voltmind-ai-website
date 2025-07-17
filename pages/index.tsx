@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Bot, Users, CheckCircle, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
 import Head from 'next/head';
-import Image from "next/image";
+
 
 // Updated landing page
 const VoltMindLanding = () => {
@@ -348,7 +348,7 @@ const VoltMindLanding = () => {
                 <span className="text-lg font-bold text-white">VoltMind AI</span>
               </div>
               <div className="text-slate-400 text-sm">
-                ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2025 VoltMind AI. All rights reserved.
+                ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2025 VoltMind AI. All rights reserved.
               </div>
             </div>
           </div>
