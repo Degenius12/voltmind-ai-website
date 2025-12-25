@@ -1,0 +1,375 @@
+import React, { useState } from 'react';
+import { ArrowRight, Bot, Zap, Users, CheckCircle, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import Head from 'next/head';
+
+const VoltMindLanding = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted:', formData);
+    alert('Thank you for your interest! We\'ll get back to you within 24 hours.');
+    setFormData({ name: '', email: '', company: '', message: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <>
+      <Head>
+        <title>VoltMind AI - The AI Upgrade Your Business Needs</title>
+        <meta name="description" content="Transform your business with cutting-edge AI solutions, custom applications, and intelligent automation. VoltMind AI helps companies scale faster and unlock new opportunities." />
+        <meta name="keywords" content="AI solutions, business automation, custom AI apps, machine learning, artificial intelligence consulting" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://voltmind.ai/" />
+        <meta property="og:title" content="VoltMind AI - The AI Upgrade Your Business Needs" />
+        <meta property="og:description" content="Transform your business with cutting-edge AI solutions, custom applications, and intelligent automation." />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://voltmind.ai/" />
+        <meta property="twitter:title" content="VoltMind AI - The AI Upgrade Your Business Needs" />
+        <meta property="twitter:description" content="Transform your business with cutting-edge AI solutions, custom applications, and intelligent automation." />
+      </Head>
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
+        {/* Navigation */}
+        <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-teal-500/20 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-yellow-400" />
+                </div>
+                <span className="text-2xl font-bold text-white">VoltMind AI</span>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="#solutions" className="text-slate-300 hover:text-white transition-colors">Solutions</a>
+                <a href="#about" className="text-slate-300 hover:text-white transition-colors">About</a>
+                <a href="#contact" className="text-slate-300 hover:text-white transition-colors">Contact</a>
+                <button className="bg-gradient-to-r from-teal-500 to-yellow-500 text-white px-6 py-2 rounded-lg hover:from-teal-600 hover:to-yellow-600 transition-all transform hover:scale-105">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full mb-8">
+                <Bot className="w-4 h-4 text-teal-400 mr-2" />
+                <span className="text-teal-300 text-sm">Trusted by Businesses Worldwide</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                The AI Upgrade
+                <span className="bg-gradient-to-r from-teal-400 to-yellow-400 bg-clip-text text-transparent"> Your Business</span>
+                <br />Needs
+              </h1>
+              
+              <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Transform your business with cutting-edge AI solutions, custom applications, and intelligent automation. 
+                We help companies scale faster, reduce costs, and unlock new opportunities.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="bg-gradient-to-r from-teal-500 to-yellow-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-teal-600 hover:to-yellow-600 transition-all transform hover:scale-105 flex items-center group">
+                  Book a Discovery Call
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="border-2 border-teal-500/50 text-teal-300 px-8 py-4 rounded-lg font-semibold hover:bg-teal-500/10 transition-all">
+                  View Our Work
+                </button>
+              </div>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
+              <div className="flex items-center justify-center">
+                <div className="w-32 h-16 bg-slate-800/50 rounded-lg flex items-center justify-center">
+                  <span className="text-slate-400 font-semibold">TechCorp</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-32 h-16 bg-slate-800/50 rounded-lg flex items-center justify-center">
+                  <span className="text-slate-400 font-semibold">InnovateCo</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-32 h-16 bg-slate-800/50 rounded-lg flex items-center justify-center">
+                  <span className="text-slate-400 font-semibold">FutureLogic</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-32 h-16 bg-slate-800/50 rounded-lg flex items-center justify-center">
+                  <span className="text-slate-400 font-semibold">ScaleUp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Value Propositions */}
+        <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Why Choose VoltMind AI?</h2>
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                We deliver transformative AI solutions that drive real business results
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all group">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Bot className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Custom AI Solutions</h3>
+                <p className="text-slate-300 mb-6">
+                  Tailored artificial intelligence systems designed specifically for your business needs and industry requirements.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Machine Learning Models</span>
+                  </div>
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Natural Language Processing</span>
+                  </div>
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Computer Vision</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all group">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Business Automation</h3>
+                <p className="text-slate-300 mb-6">
+                  Streamline operations and eliminate manual tasks with intelligent automation workflows that scale with your business.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Process Automation</span>
+                  </div>
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Workflow Integration</span>
+                  </div>
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">ROI Optimization</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-teal-500/50 transition-all group">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Expert Consulting</h3>
+                <p className="text-slate-300 mb-6">
+                  Strategic guidance from AI experts who understand your industry and can navigate complex implementation challenges.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Strategy Development</span>
+                  </div>
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Implementation Support</span>
+                  </div>
+                  <div className="flex items-center text-slate-400">
+                    <CheckCircle className="w-4 h-4 text-teal-400 mr-2" />
+                    <span className="text-sm">Ongoing Optimization</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl font-bold text-white mb-6">About VoltMind AI</h2>
+                <p className="text-lg text-slate-300 mb-6">
+                  We're a forward-thinking AI agency dedicated to helping businesses harness the power of artificial intelligence. 
+                  Our mission is to make advanced AI accessible and practical for companies of all sizes.
+                </p>
+                <p className="text-lg text-slate-300 mb-8">
+                  With expertise spanning machine learning, automation, and custom application development, we deliver solutions 
+                  that drive measurable results and competitive advantage.
+                </p>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-teal-400 mb-2">100+</div>
+                    <div className="text-slate-300">Projects Delivered</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
+                    <div className="text-slate-300">Happy Clients</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="w-full h-96 bg-gradient-to-br from-teal-500/20 to-yellow-500/20 rounded-2xl flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Zap className="w-12 h-12 text-yellow-400" />
+                    </div>
+                    <p className="text-slate-300 text-lg font-semibold">AI-Powered Innovation</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                Get in touch to discuss how VoltMind AI can help you achieve your goals
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center text-slate-300">
+                    <Mail className="w-5 h-5 text-teal-400 mr-3" />
+                    <span>hello@voltmind.ai</span>
+                  </div>
+                  <div className="flex items-center text-slate-300">
+                    <Phone className="w-5 h-5 text-teal-400 mr-3" />
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center text-slate-300">
+                    <MapPin className="w-5 h-5 text-teal-400 mr-3" />
+                    <span>Global Remote Team</span>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
+                  <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                  <div className="flex space-x-4">
+                    <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-teal-500/20 transition-colors">
+                      <Twitter className="w-5 h-5 text-slate-300" />
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-teal-500/20 transition-colors">
+                      <Linkedin className="w-5 h-5 text-slate-300" />
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-teal-500/20 transition-colors">
+                      <Github className="w-5 h-5 text-slate-300" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">Company</label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      placeholder="Your company name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={4}
+                      className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      placeholder="Tell us about your project..."
+                    />
+                  </div>
+                  <button
+                    onClick={handleSubmit}
+                    className="w-full bg-gradient-to-r from-teal-500 to-yellow-500 text-white py-3 rounded-lg font-semibold hover:from-teal-600 hover:to-yellow-600 transition-all transform hover:scale-105"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-slate-900/50 border-t border-slate-800 py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="flex items-center space-x-2 mb-4 md:mb-0">
+                <div className="w-6 h-6 bg-teal-600 rounded-lg flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                </div>
+                <span className="text-lg font-bold text-white">VoltMind AI</span>
+              </div>
+              <div className="text-slate-400 text-sm">
+                © 2025 VoltMind AI. All rights reserved.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+};
+
+export default VoltMindLanding;
