@@ -1,6 +1,6 @@
 # VoltMind AI Brand Guidelines
 
-**Version 1.0** | December 29, 2025
+**Version 2.0** | December 30, 2025
 
 ---
 
@@ -39,7 +39,21 @@ VoltMind AI represents the intersection of **intelligence** and **energy**. Our 
 
 **File**: `images/voltmind-logo-primary.png` (400×480px)
 
-The primary logo features a bold neon **V** symbol with electric arcs, representing the fusion of voltage and mind. The wordmark "VoltMind" appears in white with "AI" as a blue accent below.
+The primary logo features a bold **V** symbol with electric arcs, representing the fusion of voltage and mind. The wordmark "VoltMind" appears in navy blue with "AI" as an electric blue accent below.
+
+**Logo Design Elements**:
+- **V Symbol**: Two-tone electric blue gradient
+  - Outer V: Electric Blue `#2563EB` (website accent color)
+  - Inner glow: Light Blue `#60A5FA` (creates dimensional depth)
+  - Core: Very Light Blue `#93C5FD` (brightest center, "liquid inside" effect)
+- **Electric Arcs**: Bold amber curves with outline for visibility
+  - Arc color: Bright Amber `#F59E0B`
+  - Outline: Dark Brown `#92400E` (provides contrast on white backgrounds)
+  - Width: 6px arcs with 8px outline
+- **Text**:
+  - "VoltMind": Navy `#0F172A` (website primary color)
+  - "AI": Electric Blue `#2563EB` (website accent color)
+- **Background**: Transparent (RGBA format for seamless integration)
 
 **Usage**:
 - Website headers (40px height)
@@ -131,6 +145,28 @@ White version for use on dark backgrounds.
 - **RGB**: 255, 255, 255
 - **Use**: Text on dark backgrounds, clean sections
 
+### Logo-Specific Colors
+
+#### Light Blue (Logo Inner Glow)
+- **Hex**: `#60A5FA`
+- **RGB**: 96, 165, 250
+- **Use**: Logo V symbol inner glow only (creates depth effect)
+
+#### Very Light Blue (Logo Core)
+- **Hex**: `#93C5FD`
+- **RGB**: 147, 197, 253
+- **Use**: Logo V symbol core only (brightest center)
+
+#### Bright Amber (Logo Arcs)
+- **Hex**: `#F59E0B`
+- **RGB**: 245, 158, 11
+- **Use**: Logo electric arcs only
+
+#### Dark Brown (Arc Outline)
+- **Hex**: `#92400E`
+- **RGB**: 146, 64, 14
+- **Use**: Logo arc outlines for contrast
+
 ### Secondary Colors
 
 #### Slate Gray
@@ -142,13 +178,6 @@ White version for use on dark backgrounds.
 - **Hex**: `#F8FAFC`
 - **RGB**: 248, 250, 252
 - **Use**: Light section backgrounds, cards
-
-### Gradient (Optional)
-
-**Electric Blue to Purple**
-- From: `#2563EB` (Electric Blue)
-- To: `#7C3AED` (Purple)
-- Use sparingly for special emphasis, CTAs, or visual accents
 
 ---
 
@@ -290,6 +319,15 @@ All logo files are located in the `branding_assets/` folder:
 ---
 
 ## Version History
+
+- **v2.0** (Dec 30, 2025): Final logo refinements and complete specifications
+  - Fixed logo background (transparent RGBA instead of dark RGB)
+  - Updated text colors (navy instead of white for visibility)
+  - Matched logo blue to website brand color (#2563EB)
+  - Enhanced electric arcs visibility (bright amber with outline)
+  - Restored two-tone depth effect in V symbol
+  - Comprehensive color palette documentation
+  - All logo specifications finalized
 
 - **v1.0** (Dec 29, 2025): Initial brand guidelines created
   - Primary logo established (Concept 21: Bold neon V with electric arcs)
