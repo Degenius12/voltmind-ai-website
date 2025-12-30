@@ -72,10 +72,20 @@ voltmind-ai-website/
 ├── js/
 │   └── main.js             # Main JavaScript (form handling, menu, etc.)
 │
-└── images/                 # Image assets (create this folder)
-    ├── favicon.png         # Site favicon
-    ├── logo.png            # Company logo
-    └── team/               # Team member photos (optional)
+├── images/                 # Image assets
+│   └── voltmind-logo-primary.png  # Primary logo (400×480px)
+│
+├── branding_assets/        # Complete branding asset library (optional)
+│   ├── voltmind-logo-header.png
+│   ├── voltmind-logo-white-header.png
+│   ├── voltmind-logo-square.png
+│   ├── voltmind-brandmark.png
+│   ├── favicon-*.png (multiple sizes)
+│   └── social media cards
+│
+├── favicon.ico             # Multi-resolution favicon
+├── apple-touch-icon.png    # iOS home screen icon (180×180px)
+└── voltmind-logo-white-header.png  # White logo for footer (400×480px)
 ```
 
 ## 🚀 Quick Start
@@ -114,21 +124,24 @@ Edit `css/styles.css` at the top (CSS Variables section):
 }
 ```
 
-#### Add Your Logo
-Replace the SVG logo in the header across all pages or add your logo image:
+#### Logo & Branding
 
-```html
-<!-- Current logo (SVG placeholder) -->
-<a href="index.html" class="header__logo">
-  <svg>...</svg>
-  VoltMind AI
-</a>
+**Official VoltMind AI Logo is already installed!**
 
-<!-- Replace with your logo image -->
-<a href="index.html" class="header__logo">
-  <img src="images/logo.png" alt="VoltMind AI" width="150">
-</a>
-```
+The official logo (Concept 21: Bold neon V with electric arcs) is already integrated across all pages:
+
+- **Header Logo**: `images/voltmind-logo-primary.png` (40px height)
+- **Footer Logo**: `voltmind-logo-white-header.png` (48px height - white version)
+- **Favicon**: `favicon.ico` (multi-resolution)
+- **Apple Touch Icon**: `apple-touch-icon.png` (180×180px)
+
+**Complete Branding Assets**:
+All logo variations, social media cards, and brand marks are available in the `branding_assets/` folder. See **[VOLTMIND-BRAND-GUIDELINES.md](./VOLTMIND-BRAND-GUIDELINES.md)** for complete usage instructions.
+
+**Brand Colors**:
+- Navy: `#0F172A`
+- Electric Blue: `#2563EB`
+- White: `#FFFFFF`
 
 #### Add Team Photos
 Replace the gradient placeholders in `about.html`:
@@ -458,7 +471,7 @@ Before going live:
 - [ ] Set up form handling (FormSpree, custom backend, etc.)
 - [ ] Add calendar booking widget
 - [ ] Configure Google Analytics
-- [ ] Add real logo and favicon
+- [x] Add real logo and favicon (VoltMind AI official branding installed)
 - [ ] Test all forms
 - [ ] Test on mobile devices
 - [ ] Test on multiple browsers
