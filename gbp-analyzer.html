@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Google Business Profile Analyzer">
+  <title>Google Business Profile Analyzer - VoltMind AI</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo">
+        <img src="images/voltmind-logo-primary.png" alt="VoltMind AI" height="40">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="tools.html" class="header__nav-link active">Free Tools</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Google Business Profile Analyzer</h1>
+      <p>Get instant insights into your GBP performance</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card" style="max-width: 800px; margin: 0 auto; padding: 32px;">
+        <form id="gbpAnalyzerForm">
+          <h2>Analyze Your Profile</h2>
+          
+          <div class="form-group">
+            <label>Business Name *</label>
+            <input type="text" id="businessName" required>
+          </div>
+
+          <div class="form-group">
+            <label>Category *</label>
+            <select id="businessCategory" required>
+              <option value="">Select category</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="retail">Retail Store</option>
+              <option value="professional">Professional Services</option>
+              <option value="medical">Medical/Healthcare</option>
+              <option value="home-services">Home Services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <h3>Profile Completeness</h3>
+          <label><input type="checkbox" name="hasDescription"> Description added</label><br>
+          <label><input type="checkbox" name="hasHours"> Hours listed</label><br>
+          <label><input type="checkbox" name="hasPhotos"> 10+ photos</label><br>
+          <label><input type="checkbox" name="hasWebsite"> Website added</label><br>
+
+          <h3>Engagement</h3>
+          <div class="form-group">
+            <label>Number of Reviews</label>
+            <input type="number" id="reviewCount" min="0" value="0">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Analyze Profile
+          </button>
+        </form>
+
+        <div id="results" style="display: none; margin-top: 32px;">
+          <h2>Analysis Results</h2>
+          <div style="text-align: center; font-size: 48px; color: #2563EB;">
+            <span id="score">0</span>/100
+          </div>
+          <ul id="recommendations"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/gbp-analyzer.js"></script>
+</body>
+</html>

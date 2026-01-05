@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free AI Business Readiness Assessment">
+  <title>AI Readiness Assessment - VoltMind AI</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo">
+        <img src="images/voltmind-logo-primary.png" alt="VoltMind AI" height="40">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link">Home</a></li>
+          <li><a href="tools.html" class="header__nav-link active">Free Tools</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>AI Business Readiness Assessment</h1>
+      <p>Discover how prepared your business is for AI adoption</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card" style="max-width: 800px; margin: 0 auto; padding: 32px;">
+        <form id="aiAssessmentForm">
+          <h2>Assessment Questions</h2>
+          
+          <div class="form-group">
+            <label>Company Size *</label>
+            <select id="companySize" required>
+              <option value="">Select size</option>
+              <option value="1-10">1-10 employees</option>
+              <option value="11-50">11-50 employees</option>
+              <option value="51-200">51-200 employees</option>
+              <option value="200+">200+ employees</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Industry *</label>
+            <select id="industry" required>
+              <option value="">Select industry</option>
+              <option value="retail">Retail/E-commerce</option>
+              <option value="services">Professional Services</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="finance">Finance</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <h3>Current Technology Use</h3>
+          <label><input type="checkbox" name="hasCloudTools"> Using cloud-based tools</label><br>
+          <label><input type="checkbox" name="hasDataAnalytics"> Tracking business metrics</label><br>
+          <label><input type="checkbox" name="hasAutomation"> Some processes automated</label><br>
+          <label><input type="checkbox" name="hasDigitalMarketing"> Digital marketing active</label><br>
+
+          <h3>Business Challenges</h3>
+          <label><input type="checkbox" name="needEfficiency"> Need to improve efficiency</label><br>
+          <label><input type="checkbox" name="needCustomerService"> Want better customer service</label><br>
+          <label><input type="checkbox" name="needDataInsights"> Need better data insights</label><br>
+          <label><input type="checkbox" name="needCostReduction"> Looking to reduce costs</label><br>
+
+          <div class="form-group">
+            <label>AI Knowledge Level</label>
+            <select id="aiKnowledge">
+              <option value="none">No knowledge</option>
+              <option value="basic">Basic understanding</option>
+              <option value="moderate">Moderate knowledge</option>
+              <option value="advanced">Advanced understanding</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Get Assessment Results
+          </button>
+        </form>
+
+        <div id="assessmentResults" style="display: none; margin-top: 32px;">
+          <h2>Your AI Readiness Score</h2>
+          <div style="text-align: center;">
+            <div style="font-size: 48px; color: #2563EB;">
+              <span id="readinessScore">0</span>%
+            </div>
+            <p id="readinessLevel" style="font-size: 24px; margin: 16px 0;"></p>
+          </div>
+          
+          <h3>Key Recommendations</h3>
+          <ul id="aiRecommendations"></ul>
+          
+          <h3>Suggested Next Steps</h3>
+          <ol id="nextSteps"></ol>
+          
+          <div style="background: #F0F9FF; padding: 24px; border-radius: 8px; margin-top: 24px;">
+            <h3>Get Your Personalized AI Roadmap</h3>
+            <p>Enter your email to receive a detailed AI implementation plan for your business.</p>
+            <form id="emailForm" style="display: flex; gap: 16px; margin-top: 16px;">
+              <input type="email" placeholder="Your email" required style="flex: 1; padding: 12px;">
+              <button type="submit" class="btn btn-primary">Get Roadmap</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/ai-assessment.js"></script>
+</body>
+</html>
