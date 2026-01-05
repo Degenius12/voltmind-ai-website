@@ -882,3 +882,48 @@ p {
   h1 { font-size: 1.75rem; }
   .hero__title { font-size: 1.75rem; }
 }
+/* ==========================================================================
+   LAYOUT FIX - Reduces excessive padding (Added by Claude)
+   ========================================================================== */
+.hero {
+  padding: 48px 0 !important;
+}
+
+.section {
+  padding: 48px 0 !important;
+}
+
+.section-sm {
+  padding: 32px 0 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 32px 0 !important;
+  }
+  
+  .section {
+    padding: 32px 0 !important;
+  }
+  
+  .hero__title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 24px 0 !important;
+  }
+  
+  .section {
+    padding: 24px 0 !important;
+  }
+  
+  .hero__title {
+    font-size: 1.75rem !important;
+  }
+}
+/* END LAYOUT FIX */
