@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nchore: Organize logo assets and update gitignore\n\n- Move logo files to branding_assets/ directory\n- Add white logo variant to images/\n- Update .gitignore to exclude development files \\(*.bat, nul, docs/logo-development/\\)\n- Remove temporary files from root directory\n- Improve project structure and organization\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(ls:*)",
+      "Bash(identify -verbose:*)",
+      "Bash(grep:*)",
+      "Bash(git restore:*)",
+      "Bash(git commit:*)",
+      "Bash(file:*)",
+      "Bash(python generate_voltmind_logo.py:*)",
+      "Bash(python3:*)",
+      "Bash(where python py python3)",
+      "Bash(py:*)"
+    ]
+  }
+}
