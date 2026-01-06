@@ -62,3 +62,9 @@ images/original/
 # Analytics & Tracking
 # (Uncomment if you want to exclude analytics config)
 # analytics-config.js
+.vercel
+
+# Development/Testing Files
+*.bat
+nul
+docs/logo-development/
