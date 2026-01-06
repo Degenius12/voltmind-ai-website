@@ -37,13 +37,13 @@ section,
   
   .header,
   header {
-    max-height: 180px !important;
+    max-height: 220px !important;
     height: auto !important;
   }
   
   .header__container {
     padding: 10px 24px !important;
-    max-height: 170px !important;
+    max-height: 210px !important;
   }
 }
 
@@ -69,7 +69,7 @@ body > section:first-of-type {
 .header {
   position: sticky !important;
   top: 0 !important;
-  max-height: 170px !important;
+  max-height: 210px !important;
   z-index: 1000 !important;
 }
 
@@ -77,7 +77,7 @@ body > section:first-of-type {
 .header__logo img,
 .header img,
 .logo img {
-  max-height: 140px !important;
+  max-height: 175px !important;
   width: auto !important;
   height: auto !important;
   display: block !important;
@@ -95,15 +95,15 @@ body > section:first-of-type {
   .header__logo img,
   .header img,
   .logo img {
-    max-height: 160px !important;
+    max-height: 240px !important;
   }
   
   .header {
-    max-height: 200px !important;
+    max-height: 240px !important;
   }
   
   .header__container {
-    max-height: 180px !important;
+    max-height: 220px !important;
     padding: 15px 24px !important;
   }
 }
