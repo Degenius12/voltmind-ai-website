@@ -1,4 +1,4 @@
-/* DESKTOP LAYOUT FIX - Force proper spacing at all screen sizes */
+/* DESKTOP LAYOUT FIX - Compact header with responsive logo sizing */
 
 /* Override CSS variables globally */
 :root {
@@ -8,7 +8,7 @@
 }
 
 /* Fix hero and sections at ALL viewport widths */
-.hero, 
+.hero,
 .hero__container,
 [class*="hero"] {
   padding-top: 48px !important;
@@ -25,39 +25,6 @@ section,
   margin: 0 !important;
 }
 
-/* Specifically target desktop/large screens */
-@media (min-width: 1200px) {
-  .hero {
-    padding: 40px 0 !important;
-  }
-
-  .section {
-    padding: 40px 0 !important;
-  }
-
-  .header,
-  header {
-    max-height: 220px !important;
-    height: auto !important;
-  }
-
-  .header__container {
-    padding: 10px 24px !important;
-    max-height: 210px !important;
-  }
-}
-
-/* Extra large screens (your 32" monitor) */
-@media (min-width: 1920px) {
-  .hero {
-    padding: 36px 0 !important;
-  }
-  
-  .section {
-    padding: 36px 0 !important;
-  }
-}
-
 /* Remove any min-height that might be causing issues */
 .hero,
 .section,
@@ -65,45 +32,101 @@ body > section:first-of-type {
   min-height: auto !important;
 }
 
-/* Ensure header stays reasonable */
+/* ========== HEADER FIXES - Compact & Responsive ========== */
+
+/* Base header - compact vertical spacing */
 .header {
   position: sticky !important;
   top: 0 !important;
-  max-height: 210px !important;
+  max-height: 80px !important;
+  height: auto !important;
   z-index: 1000 !important;
 }
 
-/* Fix logo sizing */
+.header__container {
+  padding: 12px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  max-height: 80px !important;
+}
+
+/* Base logo sizing - mobile and small screens */
 .header__logo img,
 .header img,
 .logo img {
-  max-height: 175px !important;
+  max-height: 52px !important;
   width: auto !important;
   height: auto !important;
   display: block !important;
 }
 
-/* Ensure proper vertical alignment */
-.header__container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-/* Larger logo for big screens */
-@media (min-width: 1920px) {
-  .header__logo img,
-  .header img,
-  .logo img {
-    max-height: 240px !important;
-  }
-
+/* Tablet and medium screens (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
   .header {
-    max-height: 240px !important;
+    max-height: 90px !important;
   }
 
   .header__container {
-    max-height: 220px !important;
-    padding: 15px 24px !important;
+    padding: 14px 24px !important;
+    max-height: 90px !important;
+  }
+
+  .header__logo img,
+  .header img,
+  .logo img {
+    max-height: 60px !important;
+  }
+}
+
+/* Desktop screens (1200px - 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .header {
+    max-height: 100px !important;
+  }
+
+  .header__container {
+    padding: 16px 24px !important;
+    max-height: 100px !important;
+  }
+
+  .header__logo img,
+  .header img,
+  .logo img {
+    max-height: 70px !important;
+  }
+
+  .hero {
+    padding: 40px 0 !important;
+  }
+
+  .section {
+    padding: 40px 0 !important;
+  }
+}
+
+/* Large desktop screens (1920px+) */
+@media (min-width: 1920px) {
+  .header {
+    max-height: 110px !important;
+  }
+
+  .header__container {
+    padding: 18px 24px !important;
+    max-height: 110px !important;
+  }
+
+  .header__logo img,
+  .header img,
+  .logo img {
+    max-height: 75px !important;
+  }
+
+  .hero {
+    padding: 36px 0 !important;
+  }
+
+  .section {
+    padding: 36px 0 !important;
   }
 }
