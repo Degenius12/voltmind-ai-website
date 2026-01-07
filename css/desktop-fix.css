@@ -38,7 +38,7 @@ body > section:first-of-type {
 .header {
   position: sticky !important;
   top: 0 !important;
-  max-height: 250px !important;
+  max-height: 370px !important;
   height: auto !important;
   z-index: 1000 !important;
 }
@@ -48,14 +48,14 @@ body > section:first-of-type {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  max-height: 250px !important;
+  max-height: 370px !important;
 }
 
 /* Base logo sizing - mobile and small screens - Optimized for cropped logo */
 .header__logo img,
 .header img,
 .logo img {
-  max-height: 180px !important;
+  max-height: 270px !important;
   width: auto !important;
   height: auto !important;
   display: block !important;
@@ -64,36 +64,36 @@ body > section:first-of-type {
 /* Tablet and medium screens (768px - 1199px) */
 @media (min-width: 768px) and (max-width: 1199px) {
   .header {
-    max-height: 290px !important;
+    max-height: 420px !important;
   }
 
   .header__container {
     padding: 14px 24px !important;
-    max-height: 290px !important;
+    max-height: 420px !important;
   }
 
   .header__logo img,
   .header img,
   .logo img {
-    max-height: 225px !important;
+    max-height: 340px !important;
   }
 }
 
 /* Desktop screens (1200px - 1919px) */
 @media (min-width: 1200px) and (max-width: 1919px) {
   .header {
-    max-height: 310px !important;
+    max-height: 460px !important;
   }
 
   .header__container {
     padding: 16px 24px !important;
-    max-height: 310px !important;
+    max-height: 460px !important;
   }
 
   .header__logo img,
   .header img,
   .logo img {
-    max-height: 250px !important;
+    max-height: 375px !important;
   }
 
   .hero {
@@ -108,18 +108,18 @@ body > section:first-of-type {
 /* Large desktop screens (1920px+) */
 @media (min-width: 1920px) {
   .header {
-    max-height: 345px !important;
+    max-height: 520px !important;
   }
 
   .header__container {
     padding: 18px 24px !important;
-    max-height: 345px !important;
+    max-height: 520px !important;
   }
 
   .header__logo img,
   .header img,
   .logo img {
-    max-height: 295px !important;
+    max-height: 445px !important;
   }
 
   .hero {
