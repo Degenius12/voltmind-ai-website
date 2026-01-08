@@ -1,4 +1,5 @@
 /* DESKTOP LAYOUT FIX - Compact header with responsive logo sizing */
+/* Cache-busting update: 2026-01-07 - Force CSS reload for logo size changes */
 
 /* Override CSS variables globally */
 :root {
