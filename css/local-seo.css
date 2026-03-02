@@ -1,0 +1,687 @@
+/* ==========================================================================
+   VoltMind AI - Local SEO Landing Page Styles
+   NO GRADIENTS | Clean | Trustworthy | Modern
+   ========================================================================== */
+
+/* ==========================================================================
+   AOS (Animate on Scroll) — Minimal inline implementation
+   Avoids CDN dependency. Uses IntersectionObserver for scroll animations.
+   ========================================================================== */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(32px);
+}
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos="fade-in"] {
+  transform: none;
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-32px);
+}
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(32px);
+}
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+}
+
+/* Stagger delays */
+[data-aos-delay="100"] { transition-delay: 100ms; }
+[data-aos-delay="200"] { transition-delay: 200ms; }
+[data-aos-delay="300"] { transition-delay: 300ms; }
+[data-aos-delay="400"] { transition-delay: 400ms; }
+[data-aos-delay="500"] { transition-delay: 500ms; }
+
+/* ==========================================================================
+   HERO — Landing Page Variant
+   ========================================================================== */
+.lp-hero {
+  padding: 80px 0 64px;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.lp-hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.lp-hero__subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.lp-hero__cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.lp-hero__trust {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  color: #64748B;
+  font-size: 0.875rem;
+}
+
+.lp-hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-hero__trust-icon {
+  color: var(--color-success);
+}
+
+/* ==========================================================================
+   SECTION LAYOUT — Landing Page
+   ========================================================================== */
+.lp-section {
+  padding: 80px 0;
+}
+
+.lp-section--gray {
+  background-color: var(--color-background);
+}
+
+.lp-section--dark {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.lp-section__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.lp-section__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.lp-section__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.lp-section--dark .lp-section__subtitle {
+  color: #94A3B8;
+}
+
+/* ==========================================================================
+   PAIN POINTS
+   ========================================================================== */
+.pain-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pain-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-secondary);
+}
+
+.pain-point__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pain-point__text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+.pain-point__subtext {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   SERVICES GRID
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-secondary);
+  transition: var(--transition-base);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: var(--color-accent);
+}
+
+.service-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.service-card__description {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   HOW IT WORKS — Steps
+   ========================================================================== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+}
+
+.step__number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+.step__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.step__description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Connector line between steps */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(50% + 36px);
+  width: calc(100% - 72px);
+  height: 2px;
+  background-color: var(--color-border);
+}
+
+/* ==========================================================================
+   RESULTS / STATS
+   ========================================================================== */
+.results-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.result-stat {
+  text-align: center;
+  padding: 32px 16px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.result-stat__number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.result-stat__label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-secondary);
+}
+
+.testimonial-card__stars {
+  color: #F59E0B;
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+}
+
+.testimonial-card__quote {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.testimonial-card__name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.testimonial-card__role {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   PRICING
+   ========================================================================== */
+.pricing-card {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-secondary);
+  text-align: center;
+}
+
+.pricing-card__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.pricing-card__price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pricing-card__period {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  text-align: left;
+}
+
+.pricing-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+}
+
+.pricing-card__feature:last-child {
+  border-bottom: none;
+}
+
+.pricing-card__check {
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-item__question:hover {
+  color: var(--color-accent);
+}
+
+.faq-item__icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.active .faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-item__answer {
+  max-height: 300px;
+  padding-bottom: 20px;
+}
+
+.faq-item__answer p {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   FINAL CTA
+   ========================================================================== */
+.final-cta {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-cta__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.final-cta__subtitle {
+  font-size: 1.125rem;
+  color: #94A3B8;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.final-cta__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Zoho Bookings widget */
+#zoho-bookings-widget {
+  margin-top: 48px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+#zoho-bookings-widget iframe {
+  display: block;
+}
+
+/* ==========================================================================
+   BUTTON VARIANTS — Landing Page Specific
+   ========================================================================== */
+.btn--white {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-base);
+  border: none;
+  cursor: pointer;
+}
+
+.btn--white:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.btn--outline-white {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 32px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.btn--outline-white:hover {
+  border-color: var(--color-secondary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   STICKY MOBILE CTA BAR — Always visible on mobile
+   ========================================================================== */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background-color: var(--color-secondary);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+}
+
+.sticky-cta__inner {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.sticky-cta__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-family);
+}
+
+.sticky-cta__btn--call {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+.sticky-cta__btn--book {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   RESPONSIVE — Landing Page
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .lp-hero__title { font-size: 2.75rem; }
+  .lp-section__title { font-size: 2rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .step:not(:last-child)::after { display: none; }
+  .results-stats { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .lp-hero { padding: 56px 0 48px; }
+  .lp-hero__title { font-size: 2.25rem; }
+  .lp-hero__subtitle { font-size: 1.1rem; }
+  .lp-hero__cta { flex-direction: column; align-items: center; }
+  .lp-hero__cta .btn--white,
+  .lp-hero__cta .btn--outline-white { width: 100%; max-width: 320px; justify-content: center; }
+  .lp-hero__trust { flex-direction: column; align-items: center; gap: 12px; }
+
+  .lp-section { padding: 56px 0; }
+  .lp-section__title { font-size: 1.75rem; }
+
+  .pain-points { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 24px; }
+  .results-stats { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  .pricing-card { padding: 32px 24px; }
+  .pricing-card__price { font-size: 2.5rem; }
+
+  .final-cta__title { font-size: 1.75rem; }
+  .final-cta__buttons { flex-direction: column; align-items: center; }
+  .final-cta__buttons .btn--white,
+  .final-cta__buttons .btn--outline-white { width: 100%; max-width: 320px; justify-content: center; }
+
+  #zoho-bookings-widget { margin-top: 32px; }
+  #zoho-bookings-widget iframe { height: 600px; }
+
+  /* Show sticky CTA bar on mobile */
+  .sticky-cta { display: block; }
+
+  /* Add bottom padding to body so sticky bar doesn't cover content */
+  body { padding-bottom: 72px; }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .lp-hero__title { font-size: 1.875rem; }
+  .results-stats { grid-template-columns: 1fr; }
+}
