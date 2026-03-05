@@ -1,0 +1,351 @@
+/* ==========================================================================
+   VoltMind AI - Animated N8N-Style Flowcharts
+   Pure CSS animations with scroll-triggered reveals
+   ========================================================================== */
+
+/* ==========================================================================
+   FLOWCHART CONTAINER
+   ========================================================================== */
+.flowchart {
+  position: relative;
+  padding: 48px 24px;
+  overflow: hidden;
+}
+
+.flowchart__title {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+.flowchart__canvas {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 300px;
+  padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   NODES — N8N-style rounded cards with icons
+   ========================================================================== */
+.fc-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: scale(0.6) translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+  cursor: default;
+}
+
+.fc-node.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.fc-node__box {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.fc-node:hover .fc-node__box {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.fc-node__box svg {
+  width: 32px;
+  height: 32px;
+}
+
+.fc-node__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.fc-node__sublabel {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 100px;
+  line-height: 1.3;
+}
+
+/* Node color variants */
+.fc-node--trigger .fc-node__box {
+  background-color: #DBEAFE;
+  border: 2px solid #2563EB;
+  color: #2563EB;
+}
+
+.fc-node--ai .fc-node__box {
+  background-color: #0F172A;
+  border: 2px solid #0F172A;
+  color: #FFFFFF;
+}
+
+.fc-node--action .fc-node__box {
+  background-color: #D1FAE5;
+  border: 2px solid #059669;
+  color: #059669;
+}
+
+.fc-node--decision .fc-node__box {
+  background-color: #FEF3C7;
+  border: 2px solid #D97706;
+  color: #D97706;
+  border-radius: 16px;
+  transform: rotate(0deg);
+}
+
+.fc-node--output .fc-node__box {
+  background-color: #EDE9FE;
+  border: 2px solid #7C3AED;
+  color: #7C3AED;
+}
+
+.fc-node--data .fc-node__box {
+  background-color: #FCE7F3;
+  border: 2px solid #DB2777;
+  color: #DB2777;
+}
+
+/* Active pulse on trigger node */
+.fc-node--trigger .fc-node__box::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  border: 2px solid #2563EB;
+  opacity: 0;
+  animation: node-pulse 2.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.12); }
+}
+
+/* ==========================================================================
+   CONNECTION LINES — SVG paths with animated flow
+   ========================================================================== */
+.flowchart__connections {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flowchart__connections svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fc-line {
+  fill: none;
+  stroke: #CBD5E1;
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.2s ease;
+}
+
+.fc-line.revealed {
+  stroke-dashoffset: 0;
+}
+
+.fc-line--active {
+  stroke: #2563EB;
+  stroke-width: 2.5;
+}
+
+/* Animated data particles flowing along paths */
+.fc-particle {
+  fill: #2563EB;
+  opacity: 0;
+  r: 4;
+}
+
+.fc-particle.revealed {
+  opacity: 1;
+}
+
+.fc-particle--green { fill: #059669; }
+.fc-particle--purple { fill: #7C3AED; }
+.fc-particle--orange { fill: #D97706; }
+
+/* Arrow markers */
+.fc-arrow {
+  fill: #CBD5E1;
+}
+
+.fc-arrow--active {
+  fill: #2563EB;
+}
+
+/* ==========================================================================
+   FLOWCHART TOOLTIP / DETAIL POPUP
+   ========================================================================== */
+.fc-node__detail {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  z-index: 10;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.fc-node:hover .fc-node__detail {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   STAGGERED REVEAL DELAYS
+   ========================================================================== */
+.fc-node[data-delay="1"] { transition-delay: 0.1s; }
+.fc-node[data-delay="2"] { transition-delay: 0.3s; }
+.fc-node[data-delay="3"] { transition-delay: 0.5s; }
+.fc-node[data-delay="4"] { transition-delay: 0.7s; }
+.fc-node[data-delay="5"] { transition-delay: 0.9s; }
+.fc-node[data-delay="6"] { transition-delay: 1.1s; }
+.fc-node[data-delay="7"] { transition-delay: 1.3s; }
+
+.fc-line[data-delay="1"] { transition-delay: 0.2s; }
+.fc-line[data-delay="2"] { transition-delay: 0.4s; }
+.fc-line[data-delay="3"] { transition-delay: 0.6s; }
+.fc-line[data-delay="4"] { transition-delay: 0.8s; }
+.fc-line[data-delay="5"] { transition-delay: 1.0s; }
+.fc-line[data-delay="6"] { transition-delay: 1.2s; }
+
+/* ==========================================================================
+   FLOWCHART LEGEND
+   ========================================================================== */
+.flowchart__legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.flowchart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.flowchart__legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.flowchart__legend-dot--trigger { background: #DBEAFE; border: 1.5px solid #2563EB; }
+.flowchart__legend-dot--ai { background: #0F172A; border: 1.5px solid #0F172A; }
+.flowchart__legend-dot--decision { background: #FEF3C7; border: 1.5px solid #D97706; }
+.flowchart__legend-dot--action { background: #D1FAE5; border: 1.5px solid #059669; }
+.flowchart__legend-dot--output { background: #EDE9FE; border: 1.5px solid #7C3AED; }
+
+/* ==========================================================================
+   WORKFLOW SELECTOR TABS
+   ========================================================================== */
+.flowchart__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.flowchart__tab {
+  padding: 8px 20px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 24px;
+  background: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flowchart__tab:hover {
+  border-color: #2563EB;
+  color: #2563EB;
+}
+
+.flowchart__tab.active {
+  background: #2563EB;
+  border-color: #2563EB;
+  color: white;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .flowchart__canvas {
+    min-height: 600px;
+    transform: scale(0.7);
+    transform-origin: top center;
+    margin-bottom: -120px;
+  }
+
+  .flowchart__tabs {
+    gap: 6px;
+  }
+
+  .flowchart__tab {
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .flowchart__legend {
+    gap: 12px;
+  }
+
+  .fc-node__detail {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .flowchart__canvas {
+    transform: scale(0.55);
+    margin-bottom: -180px;
+  }
+}

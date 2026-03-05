@@ -14,6 +14,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css?v=2">
   <link rel="stylesheet" href="css/desktop-fix.css?v=2">
+  <link rel="stylesheet" href="css/flowcharts.css?v=1">
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -183,41 +184,53 @@
         </div>
 
         <div style="order: 1;">
-          <div class="card" style="margin-bottom: 24px;">
-            <h4 style="color: #2563EB; margin-bottom: 16px;">Common Automation Workflows</h4>
-
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #E2E8F0;">
-              <h5 style="margin-bottom: 8px;">Lead Management</h5>
-              <p class="text-small" style="color: #64748B; margin-bottom: 0;">
-                Automatic lead capture, qualification, routing, and follow-up sequencing
-              </p>
-            </div>
-
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #E2E8F0;">
-              <h5 style="margin-bottom: 8px;">Invoice Processing</h5>
-              <p class="text-small" style="color: #64748B; margin-bottom: 0;">
-                Extract data from invoices, validate, match to POs, route for approval
-              </p>
-            </div>
-
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #E2E8F0;">
-              <h5 style="margin-bottom: 8px;">Customer Support</h5>
-              <p class="text-small" style="color: #64748B; margin-bottom: 0;">
-                Ticket classification, auto-responses, escalation, and resolution tracking
-              </p>
-            </div>
-
-            <div>
-              <h5 style="margin-bottom: 8px;">Data Synchronization</h5>
-              <p class="text-small" style="color: #64748B; margin-bottom: 0;">
-                Keep your CRM, accounting, and other systems perfectly in sync automatically
-              </p>
-            </div>
-          </div>
-
-          <div class="stat-card">
+          <div class="stat-card" style="margin-bottom: 24px;">
             <div class="stat-card__number">200+</div>
             <div class="stat-card__label">Hours Saved Monthly (Average Client)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AUTOMATION FLOWCHARTS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 16px;">
+        <h2>See Automation in Action</h2>
+        <p class="text-large" style="max-width: 640px; margin: 0 auto;">
+          Explore real workflows we build for clients. Each step runs automatically, 24/7.
+        </p>
+      </div>
+
+      <div class="flowchart">
+        <div class="flowchart__tabs">
+          <button class="flowchart__tab active" data-workflow="lead">Lead Management</button>
+          <button class="flowchart__tab" data-workflow="support">Customer Support</button>
+          <button class="flowchart__tab" data-workflow="invoice">Invoice Processing</button>
+          <button class="flowchart__tab" data-workflow="onboarding">Employee Onboarding</button>
+          <button class="flowchart__tab" data-workflow="reporting">Report Generation</button>
+          <button class="flowchart__tab" data-workflow="social">Social Media</button>
+          <button class="flowchart__tab" data-workflow="ecommerce">E-Commerce</button>
+        </div>
+
+        <div class="flowchart__canvas"></div>
+
+        <div class="flowchart__legend">
+          <div class="flowchart__legend-item">
+            <span class="flowchart__legend-dot flowchart__legend-dot--trigger"></span> Trigger
+          </div>
+          <div class="flowchart__legend-item">
+            <span class="flowchart__legend-dot flowchart__legend-dot--ai"></span> AI Processing
+          </div>
+          <div class="flowchart__legend-item">
+            <span class="flowchart__legend-dot flowchart__legend-dot--decision"></span> Decision
+          </div>
+          <div class="flowchart__legend-item">
+            <span class="flowchart__legend-dot flowchart__legend-dot--action"></span> Action
+          </div>
+          <div class="flowchart__legend-item">
+            <span class="flowchart__legend-dot flowchart__legend-dot--output"></span> Output
           </div>
         </div>
       </div>
@@ -468,5 +481,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/flowcharts.js?v=1"></script>
 </body>
 </html>
