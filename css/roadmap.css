@@ -1,0 +1,260 @@
+/* ==========================================================================
+   VoltMind AI - Animated Process Roadmap
+   Horizontal timeline with scroll-triggered animations
+   ========================================================================== */
+
+/* ==========================================================================
+   ROADMAP CONTAINER
+   ========================================================================== */
+.roadmap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+/* ==========================================================================
+   SVG CONNECTING PATH
+   ========================================================================== */
+.roadmap__path {
+  position: absolute;
+  top: 48px;
+  left: 60px;
+  right: 60px;
+  width: calc(100% - 120px);
+  height: 8px;
+  z-index: 0;
+  overflow: visible;
+}
+
+.roadmap__track {
+  stroke: #E2E8F0;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.roadmap__progress {
+  stroke: #2563EB;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 2s ease;
+}
+
+.roadmap.revealed .roadmap__progress {
+  stroke-dashoffset: 0;
+}
+
+/* ==========================================================================
+   STEP CONTAINER
+   ========================================================================== */
+.roadmap__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.roadmap.revealed .roadmap__step[data-step="1"] { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.roadmap.revealed .roadmap__step[data-step="2"] { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.roadmap.revealed .roadmap__step[data-step="3"] { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+.roadmap.revealed .roadmap__step[data-step="4"] { opacity: 1; transform: translateY(0); transition-delay: 1.1s; }
+
+/* ==========================================================================
+   ICON CIRCLE
+   ========================================================================== */
+.roadmap__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap__icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.roadmap__step:hover .roadmap__icon {
+  transform: scale(1.1);
+}
+
+/* Icon color variants */
+.roadmap__icon--discovery {
+  background: #DBEAFE;
+  color: #2563EB;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
+}
+.roadmap__step:hover .roadmap__icon--discovery {
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.3);
+}
+
+.roadmap__icon--strategy {
+  background: #0F172A;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.25);
+}
+.roadmap__step:hover .roadmap__icon--strategy {
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.35);
+}
+
+.roadmap__icon--implement {
+  background: #D1FAE5;
+  color: #059669;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.2);
+}
+.roadmap__step:hover .roadmap__icon--implement {
+  box-shadow: 0 8px 28px rgba(5, 150, 105, 0.3);
+}
+
+.roadmap__icon--support {
+  background: #EDE9FE;
+  color: #7C3AED;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.2);
+}
+.roadmap__step:hover .roadmap__icon--support {
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.3);
+}
+
+/* Pulse ring on active step after reveal */
+.roadmap.revealed .roadmap__icon::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0;
+  animation: roadmap-pulse 3s ease-in-out infinite;
+}
+
+.roadmap__step[data-step="1"] .roadmap__icon::after { animation-delay: 0.5s; }
+.roadmap__step[data-step="2"] .roadmap__icon::after { animation-delay: 1.0s; }
+.roadmap__step[data-step="3"] .roadmap__icon::after { animation-delay: 1.5s; }
+.roadmap__step[data-step="4"] .roadmap__icon::after { animation-delay: 2.0s; }
+
+@keyframes roadmap-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.15); }
+}
+
+/* ==========================================================================
+   CONNECTOR DOT (below icon, on the track line)
+   ========================================================================== */
+.roadmap__connector {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2563EB;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #2563EB;
+  margin: 8px 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   CONTENT CARD
+   ========================================================================== */
+.roadmap__content {
+  padding: 0 8px;
+}
+
+.roadmap__number {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2563EB;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.roadmap__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.roadmap__desc {
+  font-size: 0.875rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.roadmap__duration {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2563EB;
+  background: #EFF6FF;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .roadmap {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 48px;
+  }
+
+  .roadmap__path {
+    top: 0;
+    left: 24px;
+    width: 8px;
+    height: 100%;
+    right: auto;
+  }
+
+  .roadmap__path line {
+    x1: 4;
+    y1: 0;
+    x2: 4;
+    y2: 1000;
+  }
+
+  .roadmap__step {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .roadmap__icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+  }
+
+  .roadmap__icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .roadmap__connector {
+    display: none;
+  }
+
+  .roadmap__content {
+    padding: 0;
+  }
+}
