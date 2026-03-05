@@ -9,12 +9,17 @@
 }
 
 /* Fix hero and sections at ALL viewport widths */
-.hero,
-.hero__container,
-[class*="hero"] {
+.hero {
   padding-top: 48px !important;
   padding-bottom: 48px !important;
   margin: 0 !important;
+  max-height: none !important;
+}
+
+.hero__container {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+  margin: 0 auto !important;
   max-height: none !important;
 }
 
