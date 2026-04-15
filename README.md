@@ -73,19 +73,12 @@ voltmind-ai-website/
 │   └── main.js             # Main JavaScript (form handling, menu, etc.)
 │
 ├── images/                 # Image assets
-│   └── voltmind-logo-primary.png  # Primary logo (400×480px)
+│   └── voltmind-logo-primary.png  # Primary logo (used in header AND footer; CSS inverts to white)
 │
-├── branding_assets/        # Complete branding asset library (optional)
-│   ├── voltmind-logo-header.png
-│   ├── voltmind-logo-white-header.png
-│   ├── voltmind-logo-square.png
-│   ├── voltmind-brandmark.png
-│   ├── favicon-*.png (multiple sizes)
-│   └── social media cards
+├── branding_assets/        # Brand asset library (square, brandmark, favicons, social cards)
 │
 ├── favicon.ico             # Multi-resolution favicon
-├── apple-touch-icon.png    # iOS home screen icon (180×180px)
-└── voltmind-logo-white-header.png  # White logo for footer (400×480px)
+└── apple-touch-icon.png    # iOS home screen icon (180×180px)
 ```
 
 ## 🚀 Quick Start
@@ -130,8 +123,8 @@ Edit `css/styles.css` at the top (CSS Variables section):
 
 The official logo (Concept 21: Bold neon V with electric arcs) is already integrated across all pages:
 
-- **Header Logo**: `images/voltmind-logo-primary.png` (40px height)
-- **Footer Logo**: `voltmind-logo-white-header.png` (48px height - white version)
+- **Header Logo**: `images/voltmind-logo-primary.png`
+- **Footer Logo**: same `images/voltmind-logo-primary.png`, inverted to white via CSS `filter: brightness(0) invert(1)`
 - **Favicon**: `favicon.ico` (multi-resolution)
 - **Apple Touch Icon**: `apple-touch-icon.png` (180×180px)
 

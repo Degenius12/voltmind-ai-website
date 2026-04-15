@@ -67,24 +67,17 @@ The primary logo features a bold **V** symbol with electric arcs, representing t
 
 ### White Logo (Inverted)
 
-**File**: `voltmind-logo-white-header.png` (400×480px)
+The website footer renders the primary logo inverted to white via CSS (`filter: brightness(0) invert(1)`); no separate white asset is required for web use.
 
-White version for use on dark backgrounds.
-
-**Usage**:
-- Website footer
-- Dark-themed materials
-- Photography overlays
-- Video end cards
+For non-web contexts (print, video, dark photography overlays), generate a white version on demand from the primary logo.
 
 ---
 
 ## Logo Variations
 
 ### Full Logo
-- **Primary** (Color): `images/voltmind-logo-primary.png` (400×480px)
-- **White** (Inverted): `voltmind-logo-white-header.png` (400×480px)
-- **High-Res**: Available in branding_assets folder (1000×1200px)
+- **Primary** (Color): `images/voltmind-logo-primary.png`
+- **White** (Inverted): rendered in-browser via CSS filter on the primary logo
 
 ### Square Logo
 - **Square Format**: `voltmind-logo-square.png` (1000×1000px)
@@ -233,8 +226,8 @@ White version for use on dark backgrounds.
 ### Website
 - **Favicon**: `favicon.ico` in root directory
 - **Apple Touch Icon**: `apple-touch-icon.png` in root directory
-- **Header Logo**: `images/voltmind-logo-primary.png` (40px height)
-- **Footer Logo**: `voltmind-logo-white-header.png` (48px height)
+- **Header Logo**: `images/voltmind-logo-primary.png`
+- **Footer Logo**: same primary logo, inverted to white via CSS
 
 ### Email Signatures
 Use **primary logo** at 100-120px width
@@ -261,11 +254,9 @@ Use **primary logo** at 100-120px width
 All logo files are located in the `branding_assets/` folder:
 
 ### Full Logos
-| File | Size | Use Case |
-|------|------|----------|
-| `voltmind-logo-header.png` | 400×480px | Website header, optimized for web |
-| `voltmind-logo-white-header.png` | 400×480px | Website footer, dark backgrounds |
-| `voltmind-logo-white.png` | 1000×1200px | High-res white logo |
+| File | Use Case |
+|------|----------|
+| `images/voltmind-logo-primary.png` | Website header and footer (footer inverted via CSS filter) |
 
 ### Square & Icons
 | File | Size | Use Case |
