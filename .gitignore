@@ -68,3 +68,7 @@ images/original/
 *.bat
 nul
 docs/logo-development/
+
+# Claude Code local artifacts
+.claude/
+screenshots/
